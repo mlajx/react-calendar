@@ -1,11 +1,19 @@
+import { useState } from "react";
+import CalendarHeader from "./CalendarHeader";
+import CalendarSidebar from "./CalendarSidebar";
+import CalendarMonth from "./CalendarMonth";
 import { getCalendarDays } from "../../services/Date";
 
 function Calendar() {
-  console.table(getCalendarDays());
+  const [currentMonth, setCurrentMonth] = useState(getCalendarDays());
 
   return (
-    <div className="bg-sky-700 px-4 py-2 text-white hover:bg-sky-800 sm:px-8 sm:py-3">
-      Test Eslint and Prettier
+    <div className="flex h-screen flex-col">
+      <CalendarHeader />
+      <div className="flex flex-1">
+        <CalendarSidebar />
+        <CalendarMonth month={currentMonth} />
+      </div>
     </div>
   );
 }

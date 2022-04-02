@@ -39,6 +39,17 @@ test("ServiceDate.daysWeek is correctly", () => {
   });
 });
 
+test("ServiceDate.getWeekDay()", () => {
+  expect(ServiceDate.getWeekDay(0)).toBe(ServiceDate.weekDays[0]);
+  expect(ServiceDate.getWeekDay(1)).toBe(ServiceDate.weekDays[1]);
+  expect(ServiceDate.getWeekDay(2)).toBe(ServiceDate.weekDays[2]);
+  expect(ServiceDate.getWeekDay(3)).toBe(ServiceDate.weekDays[3]);
+  expect(ServiceDate.getWeekDay(4)).toBe(ServiceDate.weekDays[4]);
+  expect(ServiceDate.getWeekDay(5)).toBe(ServiceDate.weekDays[5]);
+  expect(ServiceDate.getWeekDay(6)).toBe(ServiceDate.weekDays[6]);
+  expect(ServiceDate.getWeekDay(7)).toBe(undefined);
+});
+
 describe("ServiceDate.getCalendarDays()", () => {
   beforeEach(() => {
     vi.useFakeTimers();
